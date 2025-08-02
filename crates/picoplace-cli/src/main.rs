@@ -4,10 +4,11 @@ use std::process::Command;
 
 mod build;
 mod clean;
+mod export; // Renamed from layout
 mod fmt;
-mod layout;
 mod lsp;
 mod open;
+mod visualize; // New command
 
 #[derive(Parser)]
 #[command(name = "picoplace")]
@@ -19,24 +20,28 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
-    /// Build PCB projects
+    /// Build and validate Zener designs
     #[command(alias = "b")]
     Build(build::BuildArgs),
 
-    /// Layout PCB designs
-    #[command(alias = "l")]
-    Layout(layout::LayoutArgs),
+    /// Export a design to a third-party EDA tool
+    #[command(alias = "e")]
+    Export(export::ExportArgs),
 
-    /// Clean PCB build artifacts
+    /// Generate an SVG visualization of a design's layout
+    #[command(alias = "v")]
+    Visualize(visualize::VisualizeArgs),
+
+    /// Clean build artifacts
     Clean(clean::CleanArgs),
 
     /// Format .zen and .star files
     Fmt(fmt::FmtArgs),
 
-    /// Language Server Protocol support
+    /// Start the Language Server Protocol (LSP) server
     Lsp(lsp::LspArgs),
 
-    /// Open PCB layout files
+    /// Open existing layout files in their default application
     #[command(alias = "o")]
     Open(open::OpenArgs),
 
@@ -53,7 +58,8 @@ fn main() -> anyhow::Result<()> {
 
     match cli.command {
         Commands::Build(args) => build::execute(args),
-        Commands::Layout(args) => layout::execute(args),
+        Commands::Export(args) => export::execute(args),
+        Commands::Visualize(args) => visualize::execute(args),
         Commands::Clean(args) => clean::execute(args),
         Commands::Fmt(args) => fmt::execute(args),
         Commands::Lsp(args) => lsp::execute(args),

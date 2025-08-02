@@ -8,8 +8,8 @@ use std::path::PathBuf;
 use crate::build::collect_files;
 
 #[derive(Args, Debug, Default, Clone)]
-#[command(about = "Generate PCB layout files from .zen files")]
-pub struct LayoutArgs {
+#[command(about = "Export a Zener design to a third-party EDA tool format")]
+pub struct ExportArgs {
     #[arg(long, help = "Skip opening the layout file after generation")]
     pub no_open: bool,
 
@@ -19,6 +19,10 @@ pub struct LayoutArgs {
         help = "Always prompt to choose a layout even when only one"
     )]
     pub select: bool,
+    
+    /// The output format. Currently only 'kicad' is supported.
+    #[arg(long, short = 't', default_value = "kicad")]
+    pub to: String,
 
     /// One or more .zen files to process for layout generation.
     /// When omitted, all .zen files in the current directory are processed.
@@ -26,7 +30,11 @@ pub struct LayoutArgs {
     pub paths: Vec<PathBuf>,
 }
 
-pub fn execute(args: LayoutArgs) -> Result<()> {
+pub fn execute(args: ExportArgs) -> Result<()> {
+    if args.to.to_lowercase() != "kicad" {
+        anyhow::bail!("Unsupported export format '{}'. Currently, only 'kicad' is supported.", args.to);
+    }
+
     // Collect .zen files to process
     let zen_paths = collect_files(&args.paths)?;
 
@@ -78,10 +86,10 @@ pub fn execute(args: LayoutArgs) -> Result<()> {
             }
 
             // Restart spinner for layout stage after diagnostics
-            spinner = Spinner::builder(format!("{file_name}: Generating layout")).start();
+            spinner = Spinner::builder(format!("{file_name}: Exporting to KiCad")).start();
         } else {
             // No diagnostics - just update the spinner message
-            spinner.set_message(format!("{file_name}: Generating layout"));
+            spinner.set_message(format!("{file_name}: Exporting to KiCad"));
         }
 
         // Check if the schematic has a layout
@@ -117,7 +125,7 @@ pub fn execute(args: LayoutArgs) -> Result<()> {
                     spinner.finish();
                     // Now print the error message
                     println!(
-                        "{} {}: Layout generation failed",
+                        "{} {}: Export failed",
                         picoplace_ui::icons::error(),
                         file_name.with_style(Style::Red).bold()
                     );
@@ -131,11 +139,11 @@ pub fn execute(args: LayoutArgs) -> Result<()> {
     }
 
     if has_errors {
-        anyhow::bail!("Layout generation failed with errors");
+        anyhow::bail!("Export failed with errors");
     }
 
     if generated_layouts.is_empty() {
-        println!("\nNo layouts found.");
+        println!("\nNo layouts found to export.");
         return Ok(());
     }
 
