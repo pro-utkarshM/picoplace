@@ -1,0 +1,20 @@
+[package]
+name = "picoplace-kicad"
+version = { workspace = true }
+edition = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+authors = { workspace = true }
+description = "KiCad integration for PCB design tools"
+
+[dependencies]
+anyhow = { workspace = true }
+dirs = { workspace = true }
+tempfile = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+typify = { workspace = true }
+chrono = { workspace = true }
+regress = { workspace = true }
+log = { workspace = true }
+picoplace-command-runner = { workspace = true }

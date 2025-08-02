@@ -1,0 +1,34 @@
+[package]
+name = "picoplace-cli"
+version = { workspace = true }
+edition = { workspace = true }
+repository = { workspace = true }
+description = "next-gen tooling for pcb design"
+homepage = { workspace = true }
+authors = { workspace = true }
+
+[package.metadata.wix]
+upgrade-guid = "8F8B3FF2-0D55-454F-B80D-1E216FCA6C42"
+path-guid = "019D9AC1-AFB6-4D44-9FE5-F7BCA676A7DF"
+license = false
+eula = false
+
+[[bin]]
+name = "picoplace"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = { workspace = true }
+clap = { workspace = true }
+picoplace-lang = { workspace = true }
+picoplace-netlist = { workspace = true }
+picoplace-kicad-exporter = { workspace = true }
+log = { workspace = true }
+ariadne = { workspace = true }
+env_logger = { workspace = true }
+colored = { workspace = true }
+picoplace-kicad = { workspace = true }
+open = { workspace = true }
+inquire = { workspace = true }
+picoplace-ui = { workspace = true }
+picoplace-buildifier = { workspace = true }

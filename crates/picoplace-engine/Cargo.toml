@@ -1,0 +1,15 @@
+[package]
+name = "picoplace-engine"
+version = { workspace = true }
+edition = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+authors = { workspace = true }
+description = "Deterministic placement and SVG visualization engine for PicoPlace"
+
+[dependencies]
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+picoplace-netlist = { workspace = true }
+log = { workspace = true }
+svg = "0.13" # A good choice for SVG generation

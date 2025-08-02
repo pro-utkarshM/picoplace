@@ -1,0 +1,27 @@
+[package]
+name = "picoplace-kicad-exporter"
+version = { workspace = true }
+edition = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+authors = { workspace = true }
+description = "PCB layout generation and management"
+
+[dependencies]
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+picoplace-netlist = { workspace = true }
+picoplace-kicad = { workspace = true }
+log = { workspace = true }
+
+[dev-dependencies]
+assert_fs = { workspace = true }
+assert_cmd = { workspace = true }
+insta = { workspace = true }
+serial_test = { workspace = true }
+paste = { workspace = true }
+walkdir = { workspace = true }
+zip = { workspace = true }
+tempfile = { workspace = true }
+serde_json = { workspace = true }
+picoplace-lang = { workspace = true }

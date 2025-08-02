@@ -1,0 +1,63 @@
+---
+source: crates/pcb-zen-core/tests/test.rs
+expression: output
+---
+Module {
+    name: "<root>",
+    source: "Top.zen",
+    children: [
+        FrozenValue(
+            Module {
+                name: "MyModule",
+                source: "/Module.zen",
+                children: [
+                    FrozenValue(
+                        Module {
+                            name: "MyComponent",
+                            source: "/Component.zen",
+                            children: [
+                                FrozenValue(
+                                    Component {
+                                        name: "Component",
+                                        footprint: "SMD:0805",
+                                        prefix: "U",
+                                        connections: {
+                                            "P1": FrozenValue(
+                                                Net {
+                                                    name: "P1",
+                                                    id: "<ID>",
+                                                    symbol: FrozenValue(
+                                                        NoneType,
+                                                    ),
+                                                },
+                                            ),
+                                            "P2": FrozenValue(
+                                                Net {
+                                                    name: "P2",
+                                                    id: "<ID>",
+                                                    symbol: FrozenValue(
+                                                        NoneType,
+                                                    ),
+                                                },
+                                            ),
+                                        },
+                                        symbol: FrozenValue(
+                                            Symbol {
+                                                name: None,
+                                                pins: {
+                                                    "1": "P1",
+                                                    "2": "P2",
+                                                },
+                                            },
+                                        ),
+                                    },
+                                ),
+                            ],
+                        },
+                    ),
+                ],
+            },
+        ),
+    ],
+}
+[]

@@ -1,0 +1,172 @@
+---
+source: crates/pcb-zen-core/tests/input.rs
+expression: output
+---
+Module {
+    name: "<root>",
+    source: "test.zen",
+    children: [
+        FrozenValue(
+            Component {
+                name: "test",
+                type: "test_component",
+                footprint: "TEST:FP",
+                prefix: "U",
+                connections: {
+                    "1": FrozenValue(
+                        Net {
+                            name: "TEST",
+                            id: "<ID>",
+                            symbol: FrozenValue(
+                                NoneType,
+                            ),
+                        },
+                    ),
+                },
+                symbol: FrozenValue(
+                    Symbol {
+                        name: None,
+                        pins: {
+                            "1": "1",
+                        },
+                    },
+                ),
+            },
+        ),
+    ],
+}
+[
+    ParameterInfo {
+        name: "str_config",
+        type_info: String,
+        required: true,
+        default_value: None,
+        help: None,
+    },
+    ParameterInfo {
+        name: "int_config",
+        type_info: Int,
+        required: true,
+        default_value: None,
+        help: None,
+    },
+    ParameterInfo {
+        name: "float_config",
+        type_info: Float,
+        required: true,
+        default_value: None,
+        help: None,
+    },
+    ParameterInfo {
+        name: "bool_config",
+        type_info: Bool,
+        required: true,
+        default_value: None,
+        help: None,
+    },
+    ParameterInfo {
+        name: "opt_str",
+        type_info: String,
+        required: false,
+        default_value: Some(
+            String(
+                "default_value",
+            ),
+        ),
+        help: None,
+    },
+    ParameterInfo {
+        name: "opt_int",
+        type_info: Int,
+        required: false,
+        default_value: Some(
+            Int(
+                42,
+            ),
+        ),
+        help: None,
+    },
+    ParameterInfo {
+        name: "opt_float",
+        type_info: Float,
+        required: false,
+        default_value: Some(
+            Float(
+                3.14,
+            ),
+        ),
+        help: None,
+    },
+    ParameterInfo {
+        name: "opt_bool",
+        type_info: Bool,
+        required: false,
+        default_value: Some(
+            Bool(
+                true,
+            ),
+        ),
+        help: None,
+    },
+    ParameterInfo {
+        name: "opt_no_default",
+        type_info: String,
+        required: false,
+        default_value: None,
+        help: None,
+    },
+    ParameterInfo {
+        name: "net_io",
+        type_info: Net,
+        required: true,
+        default_value: None,
+        help: None,
+    },
+    ParameterInfo {
+        name: "opt_net_io",
+        type_info: Net,
+        required: false,
+        default_value: None,
+        help: None,
+    },
+    ParameterInfo {
+        name: "power_io",
+        type_info: Interface {
+            name: "Power",
+            pins: {},
+        },
+        required: true,
+        default_value: None,
+        help: None,
+    },
+    ParameterInfo {
+        name: "opt_power_io",
+        type_info: Interface {
+            name: "Power",
+            pins: {},
+        },
+        required: false,
+        default_value: None,
+        help: None,
+    },
+    ParameterInfo {
+        name: "bus_io",
+        type_info: Interface {
+            name: "DataBus",
+            pins: {},
+        },
+        required: true,
+        default_value: None,
+        help: None,
+    },
+    ParameterInfo {
+        name: "system_io",
+        type_info: Interface {
+            name: "System",
+            pins: {},
+        },
+        required: true,
+        default_value: None,
+        help: None,
+    },
+]

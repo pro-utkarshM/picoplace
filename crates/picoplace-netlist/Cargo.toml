@@ -1,0 +1,19 @@
+[package]
+name = "picoplace-netlist"
+version = { workspace = true }
+edition = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+authors = { workspace = true }
+description = "Schematic handling for PCB design"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+pathdiff = { workspace = true }
+thiserror = { workspace = true }
+chrono = { workspace = true }
+dirs = { workspace = true }
+log = { workspace = true }
+picoplace-sexpr = { workspace = true }

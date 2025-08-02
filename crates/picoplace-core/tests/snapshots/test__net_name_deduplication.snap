@@ -1,0 +1,113 @@
+---
+source: crates/pcb-zen-core/tests/test.rs
+expression: output
+---
+Module {
+    name: "<root>",
+    source: "Top.zen",
+    children: [
+        FrozenValue(
+            Module {
+                name: "MyModule1",
+                source: "/MyModule.zen",
+                children: [
+                    FrozenValue(
+                        Component {
+                            name: "Component",
+                            footprint: "SMD:0805",
+                            prefix: "U",
+                            connections: {
+                                "P1": FrozenValue(
+                                    Net {
+                                        name: "INTERNAL",
+                                        id: "<ID>",
+                                        symbol: FrozenValue(
+                                            NoneType,
+                                        ),
+                                    },
+                                ),
+                            },
+                            symbol: FrozenValue(
+                                Symbol {
+                                    name: None,
+                                    pins: {
+                                        "1": "P1",
+                                    },
+                                },
+                            ),
+                        },
+                    ),
+                ],
+            },
+        ),
+        FrozenValue(
+            Module {
+                name: "MyModule2",
+                source: "/MyModule.zen",
+                children: [
+                    FrozenValue(
+                        Component {
+                            name: "Component",
+                            footprint: "SMD:0805",
+                            prefix: "U",
+                            connections: {
+                                "P1": FrozenValue(
+                                    Net {
+                                        name: "INTERNAL",
+                                        id: "<ID>",
+                                        symbol: FrozenValue(
+                                            NoneType,
+                                        ),
+                                    },
+                                ),
+                            },
+                            symbol: FrozenValue(
+                                Symbol {
+                                    name: None,
+                                    pins: {
+                                        "1": "P1",
+                                    },
+                                },
+                            ),
+                        },
+                    ),
+                ],
+            },
+        ),
+        FrozenValue(
+            Module {
+                name: "MyModule3",
+                source: "/MyModule.zen",
+                children: [
+                    FrozenValue(
+                        Component {
+                            name: "Component",
+                            footprint: "SMD:0805",
+                            prefix: "U",
+                            connections: {
+                                "P1": FrozenValue(
+                                    Net {
+                                        name: "INTERNAL",
+                                        id: "<ID>",
+                                        symbol: FrozenValue(
+                                            NoneType,
+                                        ),
+                                    },
+                                ),
+                            },
+                            symbol: FrozenValue(
+                                Symbol {
+                                    name: None,
+                                    pins: {
+                                        "1": "P1",
+                                    },
+                                },
+                            ),
+                        },
+                    ),
+                ],
+            },
+        ),
+    ],
+}
+[]
