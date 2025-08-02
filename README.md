@@ -1,9 +1,6 @@
 # picoplace: CLI for PCB Layout Synthesis
 
-`picoplace` is a command-line utility for building and synthesizing PCB layouts. It uses the
-[Zener](https://github.com/diodeinc/pcb/blob/main/docs/spec.mdx) language to describe
-PCB schematics and provides automation on top of KiCad to rapidly generate PCB layouts.
-
+`picoplace` is a command-line utility for building and synthesizing PCB layouts.
 > [!WARNING]
 > `picoplace` is under active development. Expect breaking changes and rapid iteration.
 
