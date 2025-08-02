@@ -2287,6 +2287,7 @@ dependencies = [
  "log",
  "open",
  "picoplace-buildifier",
+ "picoplace-engine",
  "picoplace-kicad",
  "picoplace-kicad-exporter",
  "picoplace-lang",

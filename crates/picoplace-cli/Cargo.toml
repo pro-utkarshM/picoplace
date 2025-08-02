@@ -21,6 +21,7 @@ path = "src/main.rs"
 anyhow = { workspace = true }
 clap = { workspace = true }
 picoplace-lang = { workspace = true }
+picoplace-engine = { path = "../picoplace-engine" }
 picoplace-netlist = { workspace = true }
 picoplace-kicad-exporter = { workspace = true }
 log = { workspace = true }
