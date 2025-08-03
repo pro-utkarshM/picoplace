@@ -20,17 +20,12 @@
 
 ## Installation
 
-### From Installer
-
-Follow the instructions [here](https://github.com/diodeinc/pcb/releases/latest)
-to install the latest `picoplace`.
-
 ### From Source
 
 ```bash
 # Clone the repository
-git clone https://github.com/diodeinc/pcb.git
-cd pcb
+git clone https://github.com/Cirkitly/picoplace.git
+cd picoplace
 
 # Install using the provided script
 ./install.sh
