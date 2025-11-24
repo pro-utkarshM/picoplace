@@ -27,6 +27,7 @@ picoplace-kicad = { path = "crates/picoplace-kicad" }
 picoplace-sexpr = { path = "crates/picoplace-sexpr", features = ["serde"] }
 picoplace-starlark-lsp = { path = "crates/picoplace-starlark-lsp" }
 picoplace-buildifier = { path = "crates/picoplace-buildifier" }
+picoplace-ai-engine = { path = "crates/picoplace-ai-engine" }
 
 anyhow = "1.0"
 ariadne = { version = "0.5", features = ["auto-color"] }

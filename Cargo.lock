@@ -2262,6 +2262,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "picoplace-ai-engine"
+version = "0.2.0-prerelease.2"
+dependencies = [
+ "anyhow",
+ "log",
+ "picoplace-engine",
+ "picoplace-netlist",
+ "reqwest 0.12.21",
+ "serde",
+ "serde_json",
+ "thiserror 1.0.69",
+]
+
+[[package]]
 name = "picoplace-buildifier"
 version = "0.2.0-prerelease.2"
 dependencies = [
@@ -2370,6 +2384,7 @@ dependencies = [
  "fastrand",
  "log",
  "picoplace-netlist",
+ "serde",
  "svg",
  "thiserror 1.0.69",
 ]
