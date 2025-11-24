@@ -2367,6 +2367,7 @@ name = "picoplace-engine"
 version = "0.2.0-prerelease.2"
 dependencies = [
  "anyhow",
+ "fastrand",
  "log",
  "picoplace-netlist",
  "svg",

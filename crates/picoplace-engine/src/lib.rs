@@ -13,6 +13,9 @@ use std::path::Path;
 use svg::node::element::{Line, Rectangle, Text};
 use svg::Document;
 
+pub mod placer_sa;
+pub mod router;
+
 // --- Data Structures ---
 
 #[derive(Debug, Clone, Copy)]

@@ -13,3 +13,4 @@ thiserror = { workspace = true }
 picoplace-netlist = { workspace = true }
 log = { workspace = true }
 svg = "0.13"
+fastrand = "2.0"
